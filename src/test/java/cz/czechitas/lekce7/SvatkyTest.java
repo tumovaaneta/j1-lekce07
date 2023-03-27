@@ -2,6 +2,7 @@ package cz.czechitas.lekce7;
 
 import org.junit.jupiter.api.Test;
 
+import java.time.Month;
 import java.time.MonthDay;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -11,6 +12,9 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class SvatkyTest {
 
+  /**
+   * Testuje metodu {@link Svatky#kdyMaSvatek(String)}
+   */
   @Test
   void kdyMaSvatek() {
     Svatky svatky = new Svatky();
@@ -18,36 +22,57 @@ class SvatkyTest {
     assertNull(svatky.kdyMaSvatek("Eva"));
   }
 
+  /**
+   * Testuje metodu {@link Svatky#jeVSeznamu(String)}
+   */
   @Test
   void jeVSeznamu() {
-    //TODO
+    //TODO Otestovat, že najde v seznamu existující jméno a nenajde neexistující jméno
   }
 
+  /**
+   * Testuje metodu {@link Svatky#getPocetJmen()}
+   */
   @Test
   void getPocetJmen() {
-    //TODO
+    //TODO Otestovat, že vrací počet jmen, která máme v seznamu
   }
 
+  /**
+   * Testuje metodu {@link Svatky#getSeznamJmen()}
+   */
   @Test
   void getSeznamJmen() {
     //TODO Zkontrolovat, že seznam jmen má správný počet položek.
   }
 
+  /**
+   * Testuje metodu {@link Svatky#pridatSvatek(String, int, int)}
+   */
   @Test
   void pridatSvatekDenMesicInt() {
-    //TODO
+    //TODO Otestuje, že je jméno v seznamu svátků a že má přiřazen správný den
   }
 
+  /**
+   * Testuje metodu {@link Svatky#pridatSvatek(String, int, Month)}
+   */
   @Test
   void pridatSvatekDenMesicMonth() {
-    //TODO
+    //TODO Otestuje, že je jméno v seznamu svátků a že má přiřazen správný den
   }
 
+  /**
+   * Testuje metodu {@link Svatky#pridatSvatek(String, MonthDay)}
+   */
   @Test
   void prridatSvatekMonthDay() {
-    //TODO
+    //TODO Otestuje, že je jméno v seznamu svátků a že má přiřazen správný den
   }
 
+  /**
+   * Testuje metodu {@link Svatky#smazatSvatek(String)}
+   */
   @Test
   void smazatSvatek() {
     //TODO Zkontrolovat, že po smazání bude počet svátků odpovídat novému počtu.
