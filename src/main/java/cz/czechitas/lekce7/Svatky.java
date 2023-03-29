@@ -5,6 +5,7 @@ import java.time.MonthDay;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Třída s informacemi o tom,kdo má kdy svátek.
@@ -59,8 +60,7 @@ public class Svatky {
    * @return Den a měsíc, případně {@code null}, pokud jméno nebylo nalezeno.
    */
   public MonthDay kdyMaSvatek(String jmeno) {
-    //TODO
-    return null;
+    return svatky.get(jmeno);
   }
 
   /**
@@ -69,8 +69,8 @@ public class Svatky {
    * @return {@code true}, pokud je jméno v seznamu. Jinak vrací {@code false}.
    */
   public boolean jeVSeznamu(String jmeno) {
-    //TODO
-    return false;
+    //TODO key nám vrátí svátky.. of metoda vytváří novou mapu
+    return svatky.containsKey(jmeno);
   }
 
   /**
@@ -79,7 +79,7 @@ public class Svatky {
    */
   public int getPocetJmen() {
     //TODO
-    return 0;
+    return svatky.size();
   }
 
   /**
@@ -88,7 +88,7 @@ public class Svatky {
    */
   public Set<String> getSeznamJmen() {
     //TODO
-    return null;
+    return svatky.keySet();
   }
 
   /**
@@ -98,6 +98,7 @@ public class Svatky {
    */
   public void pridatSvatek(String jmeno, MonthDay denMesic) {
     //TODO
+    svatky.put(jmeno, denMesic);
   }
 
   /**
@@ -108,6 +109,7 @@ public class Svatky {
    */
   public void pridatSvatek(String jmeno, int den, int mesic) {
     //TODO
+    svatky.put(jmeno, MonthDay.of(mesic, den));
   }
 
   /**
@@ -118,6 +120,7 @@ public class Svatky {
    */
   public void pridatSvatek(String jmeno, int den, Month mesic) {
     //TODO
+  svatky.put(jmeno, MonthDay.of(mesic,den));
   }
 
   /**
@@ -125,6 +128,6 @@ public class Svatky {
    * @param jmeno Jméno ke smazání.
    */
   public void smazatSvatek(String jmeno) {
-    //TODO
+  svatky.remove(jmeno);
   }
 }
